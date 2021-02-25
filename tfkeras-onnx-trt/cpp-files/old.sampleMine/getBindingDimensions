@@ -1,0 +1,17 @@
+../common/sampleInference.cpp:        iEnv.context.emplace_back(iEnv.engine->createExecutionContext());
+../common/sampleInference.cpp:    for (int b = 0; b < iEnv.engine->getNbBindings(); ++b)
+../common/sampleInference.cpp:        if (iEnv.engine->bindingIsInput(b))
+../common/sampleInference.cpp:            const bool isDynamicInput = std::any_of(dims.d, dims.d + dims.nbDims, [](int dim){ return dim == -1; }) || iEnv.engine->isShapeBinding(b);
+../common/sampleInference.cpp:                auto shape = inference.shapes.find(iEnv.engine->getBindingName(b));
+../common/sampleInference.cpp:                    if (iEnv.engine->isShapeBinding(b))
+../common/sampleInference.cpp:                    gLogWarning << "Dynamic dimensions required for input: " << iEnv.engine->getBindingName(b) << ", but no shapes were provided. Automatically overriding shape to: " << staticDims << std::endl;
+../common/sampleInference.cpp:                    if (iEnv.engine->isShapeBinding(b))
+../common/sampleInference.cpp:    for (int b = 0; b < iEnv.engine->getNbBindings(); ++b)
+../common/sampleInference.cpp:        const auto vecDim = iEnv.engine->getBindingVectorizedDim(b);
+../common/sampleInference.cpp:        const auto comps = iEnv.engine->getBindingComponentsPerElement(b);
+../common/sampleInference.cpp:        const auto dataType = iEnv.engine->getBindingDataType(b);
+../common/sampleInference.cpp:        const auto name = iEnv.engine->getBindingName(b);
+../common/sampleInference.cpp:        const auto isInput = iEnv.engine->bindingIsInput(b);
+../sampleNMT/sampleNMT.cpp:        auto bindIdx = engine->getBindingIndex(a.first.c_str());
+../sampleNMT/sampleNMT.cpp:        assert(bindIdx >= 0 && bindIdx < engine->getNbBindings());
+../sampleMovieLensMPS/sampleMovieLensMPS.cpp:        auto modelStream = samplesCommon::infer_object(engine->serialize());
